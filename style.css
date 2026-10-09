@@ -1,39 +1,115 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #111;
-  color: #f0f0f0;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  line-height: 1.6;
+:root {
+  --fond: #0d0d12;
+  --carte: #17171f;
+  --bordure: #2a2a36;
+  --texte: #eaeaf0;
+  --texte-doux: #a0a0b0;
+  --or: #f5b301;
+  --bleu: #38bdf8;
 }
 
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--fond);
+  color: var(--texte);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.7;
+}
+
+a { color: var(--bleu); }
+
+/* Navigation */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0 20px;
+}
+
+nav a {
+  color: var(--texte);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+nav a:hover {
+  background-color: var(--or);
+  color: #111;
+}
+
+/* En-tête */
 header {
   text-align: center;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #1a1a24, #0d0d12);
+  border: 1px solid var(--bordure);
+  border-radius: 16px;
+  margin-bottom: 30px;
 }
 
 header img {
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  transform: scale(1.1);
-  border: 3px solid #f5b301;
+  transform: scale(1.05);
+  border: 3px solid var(--or);
+  box-shadow: 0 0 25px rgba(245, 179, 1, 0.35);
 }
 
 h1 {
-  color: #f5b301;
+  background: linear-gradient(90deg, var(--or), var(--bleu));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
+
+/* Boutons */
+.boutons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.bouton {
+  background-color: var(--or);
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 22px;
+  border-radius: 25px;
+}
+
+.bouton.secondaire {
+  background-color: transparent;
+  color: var(--bleu);
+  border: 2px solid var(--bleu);
+}
+
+.bouton:hover { opacity: 0.85; }
+
+/* Sections */
+section { margin-bottom: 40px; }
 
 h2 {
-  color: #f5b301;
-  border-bottom: 2px solid #f5b301;
-  padding-bottom: 5px;
+  color: var(--or);
+  border-bottom: 2px solid var(--bordure);
+  padding-bottom: 8px;
 }
 
-section {
-  margin-bottom: 30px;
-}
+h3 { color: var(--bleu); }
+
+/* Compétences */
 .competences {
   list-style: none;
   padding: 0;
@@ -43,25 +119,143 @@ section {
 }
 
 .competences li {
-  background-color: #222;
-  border: 1px solid #f5b301;
+  background-color: var(--carte);
+  border: 1px solid var(--or);
   border-radius: 20px;
   padding: 8px 16px;
 }
-.projet {
-  background-color: #222;
-  border-left: 4px solid #f5b301;
-  border-radius: 8px;
-  padding: 15px 20px;
-  margin-bottom: 20px;
+
+.competences li:hover {
+  background-color: var(--or);
+  color: #111;
 }
 
-.projet h3 {
-  margin-top: 0;
-  color: #f5b301;
+/* Cartes */
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
+
+.projet, .carte {
+  background-color: var(--carte);
+  border: 1px solid var(--bordure);
+  border-left: 4px solid var(--or);
+  border-radius: 10px;
+  padding: 15px 20px;
+}
+
+.projet:hover, .carte:hover {
+  transform: translateY(-4px);
+  border-left-color: var(--bleu);
+}
+
+.projet h3, .carte h3 { margin-top: 0; }
 
 .outils {
   font-size: 0.9em;
-  color: #aaa;
+  color: var(--texte-doux);
+}
+
+/* Encadré conseil */
+.astuce {
+  background-color: rgba(56, 189, 248, 0.1);
+  border-left: 4px solid var(--bleu);
+  border-radius: 8px;
+  padding: 12px 18px;
+}
+
+/* Pied de page */
+footer {
+  text-align: center;
+  color: var(--texte-doux);
+  margin-top: 50px;
+  padding-top: 15px;
+  border-top: 1px solid var(--bordure);
+}
+
+/* Téléphone */
+@media (max-width: 600px) {
+  body { padding: 12px; }
+  h1 { font-size: 1.6em; }
+  header img { width: 150px; height: 150px; }
+}
+.etapes {
+  counter-reset: etape;
+  list-style: none;
+  padding: 0;
+}
+
+.etapes li {
+  counter-increment: etape;
+  background-color: var(--carte);
+  border: 1px solid var(--bordure);
+  border-radius: 10px;
+  padding: 12px 16px 12px 55px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.etapes li::before {
+  content: counter(etape);
+  position: absolute;
+  left: 14px;
+  top: 12px;
+  background-color: var(--accent);
+  color: #0a0f1a;
+  font-weight: bold;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 28px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  background-color: var(--carte);
+  color: var(--texte);
+  border: 1px solid var(--bordure);
+  border-radius: 8px;
+}
+
+.barre {
+  height: 12px;
+  background-color: var(--bordure);
+  border-radius: 6px;
+  margin: 12px 0 6px;
+  overflow: hidden;
+}
+
+#niveau {
+  height: 100%;
+  width: 0;
+  background-color: var(--alerte);
+  transition: width 0.3s, background-color 0.3s;
+}
+
+.choix {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background-color: var(--carte);
+  color: var(--texte);
+  border: 1px solid var(--bordure);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.choix:hover { border-color: var(--accent); }
+.choix.bon { border-color: var(--vert); background-color: rgba(52, 211, 153, 0.15); }
+.choix.faux { border-color: var(--alerte); background-color: rgba(248, 113, 113, 0.15); }
+
+button.bouton {
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
 }

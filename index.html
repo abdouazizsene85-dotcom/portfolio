@@ -7,56 +7,98 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="#projets">Projets</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <header>
-    <img src="developpeur.jpg" alt="Illustration d'un jeune développeur à lunettes codant sur son ordinateur portable, entouré d'icônes de programmation">
+    <img src="images/developpeur.jpg" alt="Illustration d'un jeune développeur à lunettes codant sur son ordinateur portable, entouré d'icônes de programmation">
     <h1>Bienvenue dans mon univers de développeur</h1>
     <p>Étudiant passionné par l'IA et la cybersécurité.</p>
+    <div class="boutons">
+      <a class="bouton" href="#projets">Voir mes projets</a>
+      <a class="bouton secondaire" href="#contact">Me contacter</a>
+    </div>
   </header>
 
   <main>
     <section>
       <h2>À propos</h2>
-      <p>Je suis un étudiant passionné par les sciences, la technologie et l’intelligence artificielle, avec l’ambition de constamment apprendre et progresser.
-Mon objectif est de devenir un ingénieur en IA hautement compétent, capable de maîtriser la programmation, les mathématiques et les technologies de pointe pour résoudre des problèmes réels.
-À long terme, je veux construire mes propres projets et entreprises technologiques, gagner en indépendance et devenir une personne dont les connaissances et le travail ont un véritable impact.
-      </p>
+      <p>Je suis un étudiant passionné par les sciences, la technologie et l'intelligence artificielle, avec l'ambition de constamment apprendre et progresser.</p>
+      <p>Mon objectif est de devenir un ingénieur en IA hautement compétent, capable de maîtriser la programmation, les mathématiques et les technologies de pointe pour résoudre des problèmes réels.</p>
+      <p>À long terme, je veux construire mes propres projets et entreprises technologiques, gagner en indépendance et devenir une personne dont les connaissances et le travail ont un véritable impact.</p>
+    </section>
+
+    <section>
+      <h2>Mes objectifs</h2>
+      <div class="grille">
+        <div class="carte">
+          <h3>À court terme</h3>
+          <p>Maîtriser les bases du web, publier mes premiers projets.</p>
+        </div>
+        <div class="carte">
+          <h3>À moyen terme</h3>
+          <p>Approfondir Python, les mathématiques et l'IA, et créer des projets utiles.</p>
+        </div>
+        <div class="carte">
+          <h3>À long terme</h3>
+          <p>Devenir ingénieur en IA et construire mes propres projets et entreprises.</p>
+        </div>
+      </div>
     </section>
 
     <section>
       <h2>Compétences</h2>
+
+      <h3>Web</h3>
       <ul class="competences">
-      <ul>
         <li>HTML</li>
         <li>CSS</li>
         <li>JavaScript</li>
+      </ul>
+
+      <h3>Programmation et données</h3>
+      <ul class="competences">
         <li>Python</li>
         <li>SQL</li>
         <li>langage C</li>
       </ul>
+
+      <h3>Domaines qui m'intéressent</h3>
+      <ul class="competences">
+        <li>Intelligence artificielle</li>
+        <li>Cybersécurité</li>
+        <li>Mathématiques</li>
+      </ul>
     </section>
 
-    <section>
-  <h2>Projets</h2>
+    <section id="projets">
+      <h2>Projets</h2>
+      <div class="grille">
+        <article class="projet">
+          <h3>Mon portfolio</h3>
+          <p>Mon premier site web, créé de zéro avec VS Code. J'y présente mon parcours, mes compétences et mes futurs projets.</p>
+          <p class="outils">Outils : HTML, CSS, VS Code, GitHub Pages</p>
+          <p><strong>Ce que j'ai appris :</strong> structurer une page, relier un fichier CSS, afficher une image et organiser un dossier de projet.</p>
+        </article>
 
-  <article class="projet">
-    <h3>Mon portfolio</h3>
-    <p>Mon premier site web, créé de zéro avec VS Code. J'y présente mon parcours, mes compétences et mes futurs projets.</p>
-    <p class="outils">Outils : HTML, CSS, VS Code, GitHub Pages</p>
-    <p><strong>Ce que j'ai appris :</strong> structurer une page, relier un fichier CSS, afficher une image et organiser un dossier de projet.</p>
-  </article>
+        <article class="projet">
+          <h3>Cyber Réflexes (à venir)</h3>
+          <p>Un site qui explique simplement comment reconnaître le phishing, créer de bons mots de passe et se protéger en ligne.</p>
+          <p class="outils">Outils : HTML, CSS, JavaScript</p>
+        </article>
+      </div>
+    </section>
 
-  <article class="projet">
-    <h3>Sensibilisation à la cybersécurité (à venir)</h3>
-    <p>Une page qui explique simplement comment reconnaître le phishing et créer de bons mots de passe.</p>
-    <p class="outils">Outils : HTML, CSS</p>
-  </article>
-</section>
-
-    <section>
+    <section id="contact">
       <h2>Contact</h2>
-      <p>Mon e-mail :sene.aziz@uam.edu.sn</p>
+      <p>Mon e-mail : <a href="mailto:sene.aziz@uam.edu.sn">sene.aziz@uam.edu.sn</a></p>
     </section>
   </main>
-</body>
 
-</html>
+  <footer>
+    <p>© 2026 Mon portfolio</p>
+  </footer>
+</body>
