@@ -133,8 +133,9 @@ h3 { color: var(--bleu); }
 /* Cartes */
 .grille {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
   gap: 20px;
+}
 }
 
 .projet, .carte {
@@ -175,10 +176,25 @@ footer {
 }
 
 /* Téléphone */
+img { max-width: 100%; height: auto; }
+body { overflow-wrap: break-word; }
+
 @media (max-width: 600px) {
-  body { padding: 12px; }
-  h1 { font-size: 1.6em; }
-  header img { width: 150px; height: 150px; }
+  body { padding: 12px; line-height: 1.6; }
+
+  nav { gap: 6px; }
+  nav a { padding: 10px 12px; font-size: 0.95em; }
+
+  header { padding: 20px 12px; }
+  header img { width: 140px; height: 140px; }
+
+  h1 { font-size: 1.5em; }
+  h2 { font-size: 1.3em; }
+
+  .boutons { flex-direction: column; align-items: stretch; }
+  .bouton { text-align: center; padding: 12px 20px; }
+
+  .competences li { padding: 6px 12px; font-size: 0.95em; }
 }
 .etapes {
   counter-reset: etape;
